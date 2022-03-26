@@ -5,8 +5,6 @@ btn.onclick = ()=>{
 
     socket.emit('apagar');
 
-    //console.log("hello button one");
-
 }
 
 
