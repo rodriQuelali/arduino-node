@@ -10,20 +10,45 @@ app.get('/', (req,res)=>{
 
 
 
-const {Board, Led} = require("johnny-five");
+const {Board, Leds} = require("johnny-five");
 const board = new Board();
 
 board.on("ready", ()=>{
-    
-    const led = new Led(13);
-    led.on();
-    io.on('connection', (e)=>{
+
+    const leds = new Leds([3,5,6]);
+    leds.pulse()
+
+    //ejemplo 3, array animacion.
+
+
+    //segundo pulso animacion
+    /*led.pulse({
+        easing: "linear",
+        duration: 5000,
+        cuesPoints: [0, 0.2, 0.4, 0.6, 0.8, 1],
+        keyFrames: [0, 10, 50, 0, 255],
+        onstop(){
+            console.log("Animation stopped");
+        }
+        })
+        board.wait(12000, ()=>{
+            led.stop().off();
+        })*/
+
+
+    //ejemplo 1 led pulse
+    /*led.pulse();
+    board.wait('3000', ()=>{
+        led.stop().off();
+    })*/
+
+    /*io.on('connection', (e)=>{
         e.on('apagar', ()=>{
             led.off();
         })
         //on() para enviar
         //emit para recivir
-    })
+    })*/
     //led.on();
     //led.blink(500);
     //led.off();
