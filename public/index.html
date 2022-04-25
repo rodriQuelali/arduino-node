@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row align-items-start">
             <center><h1>LED</h1></center>
             
             <div class="mb-3">
@@ -19,9 +19,21 @@
               </div>
               <div class="mb-3">
                 <button id="btn-time" onclick="btnTime()" class="btn btn-primary">enviar datos</button>
-                <button id="btn-off" onclick="btnOff()" class="btn btn-danger">off</button>
-                <button id="btn-off" onclick="btnOn()" class="btn btn-warning">on</button>
+                <button id="btn-off" onclick="btnOff()" class="btn btn-danger">off - Todos</button>
+                <button id="btn-off" onclick="btnOn()" class="btn btn-warning">on - Todos</button>
             </div>
+            <div class="mb-3">
+                <button id="btn-off" onclick="inicio()" class="btn btn-primary">Iniciar Semaforo</button>
+                <button id="btn-off" onclick="parar()" class="btn btn-primary">Parar Semaforo</button>
+                <button id="btn-off" onclick="reiniciar()" class="btn btn-primary">Reiniciar Semaforo</button>
+            </div>
+
+            <div class="row align-items-start">
+                <div class="mb-3 cur" id="Segundos">:00</div>
+		        <div class="mb-3 cur" id="Centesimas">:00</div>
+            </div>
+            <div><center><h1>Semaforo</h1></center></div>
+        <div class="row align-items-start borde">
             <div class="col-4">
                 <div class="circle" id="circle">
 
@@ -38,6 +50,8 @@
 
                 </div>
             </div>
+        </div>
+            
         </div>
     </div>
     
